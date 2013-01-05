@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>{% block title %}unnamed page{% endblock %} - Diner Beware</title>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+  <meta name="viewport" content="width=480" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <!-- <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/> -->
+
+  <link rel="stylesheet" href="/css/diner-beware.css" />
+
+  {% block head %}{% endblock %}
+ </head>
+
+ <body>
+  {% block body %}{% endblock %}
+ </body>
+</html>

@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ businessName }}{% endblock %}
+
+{% block head %}
+ <script src="/lib/moment.js"></script>
+
+ <link href="https://fonts.googleapis.com/css?family=Raleway:900,600"
+  rel="stylesheet" type="text/css">
+
+ <link rel="stylesheet" href="/css/phone.css">
+
+ <script>
+  $(function () {
+   // Change absolute dates to relative dates
+   var now = moment();
+
+   $('abbr').each(function () {
+    var m = moment($(this).attr('title'), 'YYYYMMDD');
+
+    $(this).text(m.from(now));
+   });
+  });
+ </script>
+{% endblock %}
+
+{% block body %}
+ <h1><!-- <a href="{{ fsqCallback }}">&#9664; Back</a> -->{{ businessName }} <abbr title={{ lastInspection.date }}">{{ lastInspection.date }}</abbr></h1>
+
+ <div id="primary-score" class="{{ grade }}">
+  <p>{{ lastInspection.score }}</p>
+ </div>
+
+ <div id="violations">
+  <h2>Violations</h2>
+
+  <ul>
+  {% for violation in business.violations %}
+   <li class="violation"><abbr title="{{ violation.date }}">{{ violation.date }}</abbr> {{ violation.description }}</li>
+  {% else %}
+   <li class="thumbs-up">There are no violations on file.</li>
+  {% endfor %}
+  </ul>
+ </div>
+{% endblock %}
