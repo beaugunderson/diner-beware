@@ -1,0 +1,25 @@
+{
+   "name": "diner-beware",
+   "version": "0.0.0",
+   "dependencies": {
+      "async": "*",
+      "connect-ensure-login": "*",
+      "connect-mongo": "*",
+      "consolidate": "*",
+      "csv": "*",
+      "ejs": "*",
+      "ejs-locals": "*",
+      "express": "3.x",
+      "mongodb": "*",
+      "natural": "*",
+      "passport": "*",
+      "passport-foursquare": "*",
+      "querystring": "*",
+      "request": "*",
+      "sprintf": "*",
+      "sqlite3": "*",
+      "swig": "*",
+      "underscore": "*",
+      "underscore.string": "*"
+   }
+}
