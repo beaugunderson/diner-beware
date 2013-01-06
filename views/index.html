@@ -1,10 +1,139 @@
-{% extends 'layout.html' %}
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-{% block title %}home{% endblock %}
+  <title>Diner Beware</title>
 
-{% block head %}
-{% endblock %}
+  <meta name="description" content="Diner Beware">
 
-{% block body %}
- <h1>Diner Beware</h1>
-{% endblock %}
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+
+  <!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+  <!-- End Fonts -->
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- End CSS -->
+
+  <!--[if lt IE 9]>
+   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+ </head>
+
+ <body>
+  <header>
+   <div class="container clearfix">
+
+    <!-- Handheld -->
+    <div id="handheld" class="nine columns">
+     <img src="images/handheld.png" alt="iPhone" width="500" />
+    </div>
+    <!-- End Handheld -->
+
+    <!-- Hello -->
+    <div id="hello" class="seven columns offset-by-one">
+     <h1>Diner Beware alerts you to restaurants that are unsafe to eat in.</h1>
+     <a class="button" href="/auth/foursquare">Connect to Foursquare</a>
+     <span class="info">Works with Foursquare on your iPhone or Android.</span>
+    </div>
+    <!-- End Hello -->
+
+   </div><!-- END CONTAINER -->
+  </header>
+
+  <!-- Intro -->
+  <section id="intro" class="container clearfix">
+   <div id="quote" class="ten columns">
+    <h4>&ldquo;I had no idea restaurants here could have this many
+     violations.&rdquo;</h4>
+    <p class="meta">Beau Gunderson, January 2013</p>
+   </div>
+   <div id="app-icon" class="six columns">
+    <img src="images/app-icon.jpg" alt="app-icon" width="116" />
+   </div>
+  </section>
+  <!-- End Intro -->
+
+  <!-- Screenshots -->
+  <section id="screenshots" class="container clearfix">
+   <hr  class="top sixteen columns" />
+   <div id="screens" class="ten columns offset-by-two">
+    <img src="images/screens.jpg" alt="screens" width="445" />
+   </div>
+   <div id="description" class="four columns">
+    <h2>Would you eat here?</h2>
+    <!--<h4>Apple pie croissant cupcake.</h4>-->
+    <p>Save yourself the potential of getting sick and easily avoid eating at
+    restaurants with low health inspection scores.</p>
+   </div>
+   <hr  class="bottom sixteen columns" />
+  </section>
+  <!-- End Screenshots -->
+
+  <!-- Features -->
+  <section id="features" class="container clearfix">
+   <img class="iphone-big" src="images/iphone-big.jpg" alt="iphone" width="460" />
+   <div class="lists">
+    <ul class="list four columns">
+
+     <li class="feature left">
+      <h3>Score front and center.</h3>
+      <p>It's provided by the city and takes into account health violations that
+      have ocurred.</p>
+     </li>
+
+     <li class="feature left">
+      <h3>Violations.</h3>
+      <p>Easily see what violations have been cited in the past.</p>
+     </li>
+
+    </ul>
+    <ul class="list twelve columns offset-by-eight">
+
+     <li class="feature right">
+      <h3>Timing is everything.</h3>
+      <p>We'll show you old violations too so you can make an informed
+      decision.</p>
+     </li>
+
+     <li class="feature right">
+      <h3>Recommendations.</h3>
+      <p>Skeeved out? We'll recommend other nearby restaurants with higher
+      scores.</p>
+     </li>
+
+    </ul>
+   </div>
+  </section>
+  <!-- End Features -->
+
+  <!-- Call to Action -->
+  <section id="call-to-action" class="container clearfix">
+   <div class="lead sixteen columns">
+    <a class="button" href="/auth/foursquare">Connect to Foursquare</a>
+   </div>
+  </section>
+  <!-- End Call to Action -->
+
+  <!-- Footer -->
+  <footer>
+   <div class="container clearfix">
+    <div id="copyright" class="eight columns">
+     <p>© Copyright 2012 <em>Diner Beware</em></p>
+    </div>
+
+    <div id="author" class="eight columns">
+     <p>Theme by <a href="http://themeforest.net/user/aether_" target="_blank">Aether_</a></p>
+    </div>
+   </div>
+  </footer>
+ <!-- End Footer -->
+ </body>
+</html>

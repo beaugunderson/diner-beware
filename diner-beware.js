@@ -60,6 +60,10 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
+app.get('/privacy', function (req, res) {
+  res.render('privacy');
+});
+
 app.get('/business/:businessId/:userId/:name', function (req, res) {
   var business = inspections.getBusiness(req.param('businessId'));
 
