@@ -36,7 +36,7 @@
 
   <ul>
   {% for violation in business.violations %}
-   <li class="violation"><abbr title="{{ violation.date }}">{{ violation.date }}</abbr> {{ violation.description }}</li>
+   <li class="violation">{{ violation.description }} <abbr title="{{ violation.date }}">{{ violation.date }}</abbr></li>
   {% else %}
    <li class="thumbs-up">There are no violations on file.</li>
   {% endfor %}

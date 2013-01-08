@@ -73,6 +73,10 @@ app.get('/business/:businessId/:userId/:name', function (req, res) {
 
   var grade = '';
 
+  business.violations.forEach(function (violation) {
+    violation.description = violation.description.replace(/\//g, ' or ');
+  });
+
   if (lastInspection.score < 71) {
     grade = 'd';
   } else if (lastInspection.score < 86) {
@@ -93,6 +97,24 @@ app.get('/business/:businessId/:userId/:name', function (req, res) {
   });
 });
 
+function isRestaurant(categories) {
+  var restaurant = false;
+
+  categories.forEach(function (category) {
+    if (/restaurant|food/i.test(category)) {
+      restaurant = true;
+    }
+
+    category.parents.forEach(function (parent) {
+      if (/restaurant|food/i.test(parent)) {
+        restaurant = true;
+      }
+    });
+  });
+
+  return restaurant;
+}
+
 app.post('/push', function (req, res) {
   if (req.body &&
     req.body.checkin &&
@@ -103,8 +125,9 @@ app.post('/push', function (req, res) {
     data.checkin = JSON.parse(data.checkin);
     data.user = JSON.parse(data.user);
 
-    // console.log(JSON.stringify(data, null, 2));
-    // console.log(data.checkin.venue.categories[0].parents);
+    if (!isRestaurant(data.checkin.venue.categories)) {
+      return res.send(200);
+    }
 
     inspections.findBusiness(data.checkin.venue, function (businesses) {
       if (!businesses.length) {
@@ -117,8 +140,6 @@ app.post('/push', function (req, res) {
         if (err) {
           console.log('Error:', err);
         }
-
-        console.log('XXX user', JSON.stringify(user));
 
         var score;
 
@@ -160,18 +181,16 @@ app.post('/push', function (req, res) {
             oauth_token: user.accessToken,
             v: '20130105'
           }
-        }, function (err, resp, body) {
+        }, function (err) {
           if (err) {
             console.log('Error:', err);
           }
-
-          console.log('XXX body', JSON.stringify(body, null, 2));
         });
       });
     });
   }
 
-  res.render('index');
+  res.send(200);
 });
 
 // We want exceptions and stracktraces in development

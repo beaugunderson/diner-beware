@@ -21,6 +21,9 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0; }
+  ul li {
+    line-height: 1.4em;
+    margin-bottom: 1.3em; }
 
 #primary-score {
   margin: 0;
